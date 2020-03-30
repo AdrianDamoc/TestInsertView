@@ -39,7 +39,11 @@ namespace TestInsertView
 
                dataGridView1.Update();*/
 
-            
+            string data = dateTimePicker1.Value.ToShortDateString();
+
+           
+            view_DocumentTableAdapter.InsertQuery("5","6",7,data,1029);
+           
             view_DocumentTableAdapter.Adapter.Update(proba_transareDataSet1.View_Document);
             viewDocumentBindingSource.EndEdit();
             proba_transareDataSet1.EndInit();

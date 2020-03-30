@@ -857,29 +857,31 @@ namespace TestInsertView.proba_transareDataSet1TableAdapters {
             this._commandCollection[1].Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@Original_id_partener", global::System.Data.SqlDbType.Int, 4, global::System.Data.ParameterDirection.Input, 0, 0, "id_partener", global::System.Data.DataRowVersion.Original, false, null, "", "", ""));
             this._commandCollection[2] = new global::System.Data.SqlClient.SqlCommand();
             this._commandCollection[2].Connection = this.Connection;
-            this._commandCollection[2].CommandText = "INSERT INTO [dbo].[View_Document] ([nr_doc], [serie], [data], [id_partener]) VALU" +
-                "ES (@nr_doc, @serie, @data, @id_partener);\r\nSELECT id_antet, nr_doc, serie, data" +
-                ", id_partener FROM tabela_antet WHERE (id_antet = SCOPE_IDENTITY())";
+            this._commandCollection[2].CommandText = @"INSERT INTO View_Document
+                         (nr_doc, serie, id_antet, data, id_partener)
+VALUES        (@nr_doc,@serie,@id_antet,@data,@id_partener); 
+SELECT  nr_doc, serie,id_antet, data, id_partener FROM View_Document WHERE (id_antet = SCOPE_IDENTITY())";
             this._commandCollection[2].CommandType = global::System.Data.CommandType.Text;
             this._commandCollection[2].Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@nr_doc", global::System.Data.SqlDbType.NVarChar, 20, global::System.Data.ParameterDirection.Input, 0, 0, "nr_doc", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
             this._commandCollection[2].Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@serie", global::System.Data.SqlDbType.NVarChar, 10, global::System.Data.ParameterDirection.Input, 0, 0, "serie", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
+            this._commandCollection[2].Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@id_antet", global::System.Data.SqlDbType.Int, 4, global::System.Data.ParameterDirection.Input, 0, 0, "id_antet", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
             this._commandCollection[2].Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@data", global::System.Data.SqlDbType.Date, 3, global::System.Data.ParameterDirection.Input, 0, 0, "data", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
             this._commandCollection[2].Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@id_partener", global::System.Data.SqlDbType.Int, 4, global::System.Data.ParameterDirection.Input, 0, 0, "id_partener", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
             this._commandCollection[3] = new global::System.Data.SqlClient.SqlCommand();
             this._commandCollection[3].Connection = this.Connection;
-            this._commandCollection[3].CommandText = @"UPDATE [dbo].[tabela_antet] SET [nr_doc] = @nr_doc, [serie] = @serie, [data] = @data, [id_partener] = @id_partener WHERE (([id_antet] = @Original_id_antet) AND ([nr_doc] = @Original_nr_doc) AND ([serie] = @Original_serie) AND ([data] = @Original_data) AND ([id_partener] = @Original_id_partener));
-SELECT id_antet, nr_doc, serie, data, id_partener FROM tabela_antet WHERE (id_antet = @id_antet)";
+            this._commandCollection[3].CommandText = @"UPDATE [dbo].[View_Document] SET [nr_doc] = @nr_doc, [serie] = @serie,[id_antet]=@id_antet, [data] = @data, [id_partener] = @id_partener WHERE (([nr_doc] = @Original_nr_doc) AND ([serie] = @Original_serie) AND ([id_antet] = @Original_id_antet) AND ([data] = @Original_data) AND ([id_partener] = @Original_id_partener));
+SELECT nr_doc, serie, id_antet, data, id_partener FROM View_Document WHERE (id_antet = @id_antet)";
             this._commandCollection[3].CommandType = global::System.Data.CommandType.Text;
             this._commandCollection[3].Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@nr_doc", global::System.Data.SqlDbType.NVarChar, 20, global::System.Data.ParameterDirection.Input, 0, 0, "nr_doc", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
             this._commandCollection[3].Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@serie", global::System.Data.SqlDbType.NVarChar, 10, global::System.Data.ParameterDirection.Input, 0, 0, "serie", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
+            this._commandCollection[3].Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@id_antet", global::System.Data.SqlDbType.Int, 4, global::System.Data.ParameterDirection.Input, 0, 0, "id_antet", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
             this._commandCollection[3].Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@data", global::System.Data.SqlDbType.Date, 3, global::System.Data.ParameterDirection.Input, 0, 0, "data", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
             this._commandCollection[3].Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@id_partener", global::System.Data.SqlDbType.Int, 4, global::System.Data.ParameterDirection.Input, 0, 0, "id_partener", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
-            this._commandCollection[3].Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@Original_id_antet", global::System.Data.SqlDbType.Int, 4, global::System.Data.ParameterDirection.Input, 0, 0, "id_antet", global::System.Data.DataRowVersion.Original, false, null, "", "", ""));
             this._commandCollection[3].Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@Original_nr_doc", global::System.Data.SqlDbType.NVarChar, 20, global::System.Data.ParameterDirection.Input, 0, 0, "nr_doc", global::System.Data.DataRowVersion.Original, false, null, "", "", ""));
             this._commandCollection[3].Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@Original_serie", global::System.Data.SqlDbType.NVarChar, 10, global::System.Data.ParameterDirection.Input, 0, 0, "serie", global::System.Data.DataRowVersion.Original, false, null, "", "", ""));
+            this._commandCollection[3].Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@Original_id_antet", global::System.Data.SqlDbType.Int, 4, global::System.Data.ParameterDirection.Input, 0, 0, "id_antet", global::System.Data.DataRowVersion.Original, false, null, "", "", ""));
             this._commandCollection[3].Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@Original_data", global::System.Data.SqlDbType.Date, 3, global::System.Data.ParameterDirection.Input, 0, 0, "data", global::System.Data.DataRowVersion.Original, false, null, "", "", ""));
             this._commandCollection[3].Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@Original_id_partener", global::System.Data.SqlDbType.Int, 4, global::System.Data.ParameterDirection.Input, 0, 0, "id_partener", global::System.Data.DataRowVersion.Original, false, null, "", "", ""));
-            this._commandCollection[3].Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@id_antet", global::System.Data.SqlDbType.Int, 4, global::System.Data.ParameterDirection.Input, 0, 0, "id_antet", global::System.Data.DataRowVersion.Original, false, null, "", "", ""));
         }
         
         [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
@@ -953,7 +955,7 @@ SELECT id_antet, nr_doc, serie, data, id_partener FROM tabela_antet WHERE (id_an
         [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
         [global::System.ComponentModel.Design.HelpKeywordAttribute("vs.data.TableAdapter")]
         [global::System.ComponentModel.DataObjectMethodAttribute(global::System.ComponentModel.DataObjectMethodType.Insert, false)]
-        public virtual int InsertQuery(string nr_doc, string serie, string data, int id_partener) {
+        public virtual int InsertQuery(string nr_doc, string serie, int id_antet, string data, int id_partener) {
             global::System.Data.SqlClient.SqlCommand command = this.CommandCollection[2];
             if ((nr_doc == null)) {
                 throw new global::System.ArgumentNullException("nr_doc");
@@ -967,13 +969,14 @@ SELECT id_antet, nr_doc, serie, data, id_partener FROM tabela_antet WHERE (id_an
             else {
                 command.Parameters[1].Value = ((string)(serie));
             }
+            command.Parameters[2].Value = ((int)(id_antet));
             if ((data == null)) {
                 throw new global::System.ArgumentNullException("data");
             }
             else {
-                command.Parameters[2].Value = ((string)(data));
+                command.Parameters[3].Value = ((string)(data));
             }
-            command.Parameters[3].Value = ((int)(id_partener));
+            command.Parameters[4].Value = ((int)(id_partener));
             global::System.Data.ConnectionState previousConnectionState = command.Connection.State;
             if (((command.Connection.State & global::System.Data.ConnectionState.Open) 
                         != global::System.Data.ConnectionState.Open)) {
@@ -995,7 +998,7 @@ SELECT id_antet, nr_doc, serie, data, id_partener FROM tabela_antet WHERE (id_an
         [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
         [global::System.ComponentModel.Design.HelpKeywordAttribute("vs.data.TableAdapter")]
         [global::System.ComponentModel.DataObjectMethodAttribute(global::System.ComponentModel.DataObjectMethodType.Update, false)]
-        public virtual int UpdateQuery(string nr_doc, string serie, string data, int id_partener, int Original_id_antet, string Original_nr_doc, string Original_serie, string Original_data, int Original_id_partener, int id_antet) {
+        public virtual int UpdateQuery(string nr_doc, string serie, int id_antet, string data, int id_partener, string Original_nr_doc, string Original_serie, int Original_id_antet, string Original_data, int Original_id_partener) {
             global::System.Data.SqlClient.SqlCommand command = this.CommandCollection[3];
             if ((nr_doc == null)) {
                 throw new global::System.ArgumentNullException("nr_doc");
@@ -1009,14 +1012,14 @@ SELECT id_antet, nr_doc, serie, data, id_partener FROM tabela_antet WHERE (id_an
             else {
                 command.Parameters[1].Value = ((string)(serie));
             }
+            command.Parameters[2].Value = ((int)(id_antet));
             if ((data == null)) {
                 throw new global::System.ArgumentNullException("data");
             }
             else {
-                command.Parameters[2].Value = ((string)(data));
+                command.Parameters[3].Value = ((string)(data));
             }
-            command.Parameters[3].Value = ((int)(id_partener));
-            command.Parameters[4].Value = ((int)(Original_id_antet));
+            command.Parameters[4].Value = ((int)(id_partener));
             if ((Original_nr_doc == null)) {
                 throw new global::System.ArgumentNullException("Original_nr_doc");
             }
@@ -1029,14 +1032,14 @@ SELECT id_antet, nr_doc, serie, data, id_partener FROM tabela_antet WHERE (id_an
             else {
                 command.Parameters[6].Value = ((string)(Original_serie));
             }
+            command.Parameters[7].Value = ((int)(Original_id_antet));
             if ((Original_data == null)) {
                 throw new global::System.ArgumentNullException("Original_data");
             }
             else {
-                command.Parameters[7].Value = ((string)(Original_data));
+                command.Parameters[8].Value = ((string)(Original_data));
             }
-            command.Parameters[8].Value = ((int)(Original_id_partener));
-            command.Parameters[9].Value = ((int)(id_antet));
+            command.Parameters[9].Value = ((int)(Original_id_partener));
             global::System.Data.ConnectionState previousConnectionState = command.Connection.State;
             if (((command.Connection.State & global::System.Data.ConnectionState.Open) 
                         != global::System.Data.ConnectionState.Open)) {

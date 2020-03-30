@@ -30,13 +30,15 @@
         {
             this.components = new System.ComponentModel.Container();
             this.dataGridView1 = new System.Windows.Forms.DataGridView();
+            this.nrdocDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.serieDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.dataDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.idpartenerDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.tabelaantetBindingSource = new System.Windows.Forms.BindingSource(this.components);
+            this.proba_transareDataSet = new TestInsertView.proba_transareDataSet();
             this.label1 = new System.Windows.Forms.Label();
             this.label2 = new System.Windows.Forms.Label();
             this.dataGridView2 = new System.Windows.Forms.DataGridView();
-            this.button1 = new System.Windows.Forms.Button();
-            this.tabelaantetBindingSource = new System.Windows.Forms.BindingSource(this.components);
-            this.proba_transareDataSet = new TestInsertView.proba_transareDataSet();
-            this.tabela_antetTableAdapter = new TestInsertView.proba_transareDataSetTableAdapters.tabela_antetTableAdapter();
             this.nrdocDataGridViewTextBoxColumn1 = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.idantetDataGridViewTextBoxColumn1 = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.serieDataGridViewTextBoxColumn1 = new System.Windows.Forms.DataGridViewTextBoxColumn();
@@ -44,15 +46,14 @@
             this.idpartenerDataGridViewTextBoxColumn1 = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.viewDocumentBindingSource = new System.Windows.Forms.BindingSource(this.components);
             this.proba_transareDataSet1 = new TestInsertView.proba_transareDataSet1();
+            this.button1 = new System.Windows.Forms.Button();
+            this.tabela_antetTableAdapter = new TestInsertView.proba_transareDataSetTableAdapters.tabela_antetTableAdapter();
             this.view_DocumentTableAdapter = new TestInsertView.proba_transareDataSet1TableAdapters.View_DocumentTableAdapter();
-            this.nrdocDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.serieDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.dataDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.idpartenerDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.dateTimePicker1 = new System.Windows.Forms.DateTimePicker();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.dataGridView2)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.tabelaantetBindingSource)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.proba_transareDataSet)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.dataGridView2)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.viewDocumentBindingSource)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.proba_transareDataSet1)).BeginInit();
             this.SuspendLayout();
@@ -71,6 +72,40 @@
             this.dataGridView1.Name = "dataGridView1";
             this.dataGridView1.Size = new System.Drawing.Size(295, 196);
             this.dataGridView1.TabIndex = 0;
+            // 
+            // nrdocDataGridViewTextBoxColumn
+            // 
+            this.nrdocDataGridViewTextBoxColumn.DataPropertyName = "nr_doc";
+            this.nrdocDataGridViewTextBoxColumn.HeaderText = "nr_doc";
+            this.nrdocDataGridViewTextBoxColumn.Name = "nrdocDataGridViewTextBoxColumn";
+            // 
+            // serieDataGridViewTextBoxColumn
+            // 
+            this.serieDataGridViewTextBoxColumn.DataPropertyName = "serie";
+            this.serieDataGridViewTextBoxColumn.HeaderText = "serie";
+            this.serieDataGridViewTextBoxColumn.Name = "serieDataGridViewTextBoxColumn";
+            // 
+            // dataDataGridViewTextBoxColumn
+            // 
+            this.dataDataGridViewTextBoxColumn.DataPropertyName = "data";
+            this.dataDataGridViewTextBoxColumn.HeaderText = "data";
+            this.dataDataGridViewTextBoxColumn.Name = "dataDataGridViewTextBoxColumn";
+            // 
+            // idpartenerDataGridViewTextBoxColumn
+            // 
+            this.idpartenerDataGridViewTextBoxColumn.DataPropertyName = "id_partener";
+            this.idpartenerDataGridViewTextBoxColumn.HeaderText = "id_partener";
+            this.idpartenerDataGridViewTextBoxColumn.Name = "idpartenerDataGridViewTextBoxColumn";
+            // 
+            // tabelaantetBindingSource
+            // 
+            this.tabelaantetBindingSource.DataMember = "tabela_antet";
+            this.tabelaantetBindingSource.DataSource = this.proba_transareDataSet;
+            // 
+            // proba_transareDataSet
+            // 
+            this.proba_transareDataSet.DataSetName = "proba_transareDataSet";
+            this.proba_transareDataSet.SchemaSerializationMode = System.Data.SchemaSerializationMode.IncludeSchema;
             // 
             // label1
             // 
@@ -105,30 +140,6 @@
             this.dataGridView2.Name = "dataGridView2";
             this.dataGridView2.Size = new System.Drawing.Size(317, 150);
             this.dataGridView2.TabIndex = 3;
-            // 
-            // button1
-            // 
-            this.button1.Location = new System.Drawing.Point(361, 407);
-            this.button1.Name = "button1";
-            this.button1.Size = new System.Drawing.Size(75, 23);
-            this.button1.TabIndex = 4;
-            this.button1.Text = "button1";
-            this.button1.UseVisualStyleBackColor = true;
-            this.button1.Click += new System.EventHandler(this.button1_Click);
-            // 
-            // tabelaantetBindingSource
-            // 
-            this.tabelaantetBindingSource.DataMember = "tabela_antet";
-            this.tabelaantetBindingSource.DataSource = this.proba_transareDataSet;
-            // 
-            // proba_transareDataSet
-            // 
-            this.proba_transareDataSet.DataSetName = "proba_transareDataSet";
-            this.proba_transareDataSet.SchemaSerializationMode = System.Data.SchemaSerializationMode.IncludeSchema;
-            // 
-            // tabela_antetTableAdapter
-            // 
-            this.tabela_antetTableAdapter.ClearBeforeFill = true;
             // 
             // nrdocDataGridViewTextBoxColumn1
             // 
@@ -170,39 +181,37 @@
             this.proba_transareDataSet1.DataSetName = "proba_transareDataSet1";
             this.proba_transareDataSet1.SchemaSerializationMode = System.Data.SchemaSerializationMode.IncludeSchema;
             // 
+            // button1
+            // 
+            this.button1.Location = new System.Drawing.Point(361, 407);
+            this.button1.Name = "button1";
+            this.button1.Size = new System.Drawing.Size(75, 23);
+            this.button1.TabIndex = 4;
+            this.button1.Text = "button1";
+            this.button1.UseVisualStyleBackColor = true;
+            this.button1.Click += new System.EventHandler(this.button1_Click);
+            // 
+            // tabela_antetTableAdapter
+            // 
+            this.tabela_antetTableAdapter.ClearBeforeFill = true;
+            // 
             // view_DocumentTableAdapter
             // 
             this.view_DocumentTableAdapter.ClearBeforeFill = true;
             // 
-            // nrdocDataGridViewTextBoxColumn
+            // dateTimePicker1
             // 
-            this.nrdocDataGridViewTextBoxColumn.DataPropertyName = "nr_doc";
-            this.nrdocDataGridViewTextBoxColumn.HeaderText = "nr_doc";
-            this.nrdocDataGridViewTextBoxColumn.Name = "nrdocDataGridViewTextBoxColumn";
-            // 
-            // serieDataGridViewTextBoxColumn
-            // 
-            this.serieDataGridViewTextBoxColumn.DataPropertyName = "serie";
-            this.serieDataGridViewTextBoxColumn.HeaderText = "serie";
-            this.serieDataGridViewTextBoxColumn.Name = "serieDataGridViewTextBoxColumn";
-            // 
-            // dataDataGridViewTextBoxColumn
-            // 
-            this.dataDataGridViewTextBoxColumn.DataPropertyName = "data";
-            this.dataDataGridViewTextBoxColumn.HeaderText = "data";
-            this.dataDataGridViewTextBoxColumn.Name = "dataDataGridViewTextBoxColumn";
-            // 
-            // idpartenerDataGridViewTextBoxColumn
-            // 
-            this.idpartenerDataGridViewTextBoxColumn.DataPropertyName = "id_partener";
-            this.idpartenerDataGridViewTextBoxColumn.HeaderText = "id_partener";
-            this.idpartenerDataGridViewTextBoxColumn.Name = "idpartenerDataGridViewTextBoxColumn";
+            this.dateTimePicker1.Location = new System.Drawing.Point(66, 319);
+            this.dateTimePicker1.Name = "dateTimePicker1";
+            this.dateTimePicker1.Size = new System.Drawing.Size(200, 20);
+            this.dateTimePicker1.TabIndex = 5;
             // 
             // Form1
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(800, 450);
+            this.Controls.Add(this.dateTimePicker1);
             this.Controls.Add(this.button1);
             this.Controls.Add(this.dataGridView2);
             this.Controls.Add(this.label2);
@@ -212,9 +221,9 @@
             this.Text = "Form1";
             this.Load += new System.EventHandler(this.Form1_Load);
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.dataGridView2)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.tabelaantetBindingSource)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.proba_transareDataSet)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.dataGridView2)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.viewDocumentBindingSource)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.proba_transareDataSet1)).EndInit();
             this.ResumeLayout(false);
@@ -244,6 +253,7 @@
         private System.Windows.Forms.DataGridViewTextBoxColumn serieDataGridViewTextBoxColumn;
         private System.Windows.Forms.DataGridViewTextBoxColumn dataDataGridViewTextBoxColumn;
         private System.Windows.Forms.DataGridViewTextBoxColumn idpartenerDataGridViewTextBoxColumn;
+        private System.Windows.Forms.DateTimePicker dateTimePicker1;
     }
 }
 
